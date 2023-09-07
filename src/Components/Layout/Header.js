@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, useHistory,  } from 'react-router-dom';
-import { authAction } from '../../store/auth-reducer';
+import { authAction } from '../store/auth-reducer';
 import classes from './Header.module.css';
 import LogOut from './LogOut';
 
