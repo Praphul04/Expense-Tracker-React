@@ -5,11 +5,11 @@ import Header from "./Components/Layout/Header";
 import { useSelector } from 'react-redux';
 import Home from "./Components/Pages/Home";
 import ProfilePage from "./Components/Pages/Profile";
+import ExpensePage from './Components/Pages/ExpensePage';
 import Authentication from './Components/Authentication/Authentication';
 
 function App() {
   const isLogin = useSelector(state => state.authentication.isLogin);
-
   return (
     <Fragment>
       <Header />
@@ -30,10 +30,13 @@ function App() {
               {isLogin && <ProfilePage />}
               {!isLogin && <Redirect to='/auth' />}
             </Route>
+            <Route path='/expense'>
+              {isLogin && <ExpensePage />}
+              {!isLogin && <Redirect to='/auth' />}
+            </Route>
       </Switch>
       </main>
     </Fragment>
   );
 }
-
 export default App;
